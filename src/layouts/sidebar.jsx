@@ -44,7 +44,7 @@ const Sidebar = () => (
         <nav className="grid items-start px-2 text-sm font-medium lg:px-4 gap-2">
           {navItems.map((item) => (
             <SidebarNavLink key={item.to} to={item.to}>
-              {item.icon}
+              {item.icon()}
               {item.title}
             </SidebarNavLink>
           ))}
@@ -73,6 +73,7 @@ const MobileSidebar = () => (
         </NavLink>
         {navItems.map((item) => (
           <SidebarNavLink key={item.to} to={item.to}>
+            {item.icon()}
             {item.title}
           </SidebarNavLink>
         ))}
